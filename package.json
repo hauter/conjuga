@@ -1,0 +1,22 @@
+{
+  "name": "conjuga",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "babel-node scr/main.js",
+    "build": "rm -rf dist & babel scr -d dist"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@google-cloud/text-to-speech": "^0.3.0",
+    "cheerio": "^1.0.0-rc.2",
+    "request": "^2.88.0",
+    "request-promise": "^4.2.2"
+  },
+  "devDependencies": {
+    "babel-preset-env": "^1.7.0"
+  }
+}
