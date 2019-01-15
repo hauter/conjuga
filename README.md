@@ -7,3 +7,4 @@ I can also get some good learning resources from other websites.
 
 This project is my own personal Portuguese learning tool that combins the resources of google, conjuga-me.net and more.
 
+I'm going to host this app on an aliyun server, and then provide a H5 webpage to access the service. Stay tuned!
