@@ -152,7 +152,6 @@ const parseHtml = (html) => {
 
 export default async (verbo) => {
     const url = `http://www.conjuga-me.net/verbo-${urlencode(verbo)}`
-    console.log(url)
     const html = await rp(url, {encoding: "latin1"})
     const conjugaRet = await parseHtml(html)
     conjugaRet.verbo = verbo
