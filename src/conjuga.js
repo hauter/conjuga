@@ -151,6 +151,9 @@ const parseHtml = (html) => {
 
 export default async (verbo) => {
     const html = await rp(`http://www.conjuga-me.net/verbo-${verbo}`, {encoding: "latin1"})
-    return await parseHtml(html)
+    const conjugaRet = await parseHtml(html)
+    conjugaRet.verbo = verbo
+
+    return conjugaRet
 }
 

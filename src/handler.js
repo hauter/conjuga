@@ -1,29 +1,28 @@
-import conjuga from './conjuga'
-import dao from './dao'
+import {checkConjuga} from './service'
 
 /**
- * check a word
+ * Http handler for checking a verb
  * @param {*} req 
  * @param {*} res 
  */
-async function checkWord(req, res) {
+async function checkVerb(req, res) {
     try {
-        if (req.params.word === undefined) {
+        if (req.params.verb === undefined) {
             res.status(400).send({
-                message: "word not found!"
+                message: "verb not found!"
             })
+            return
         }
     
-    
-        const result = await conjuga(req.params.word)
-        res.send(result)
-        
+        const conjugaObj = await checkConjuga(req.params.verb)
+        res.status(200).send(conjugaObj)
     } catch (e) {
-        res.status(500).send({message: "Internal Server Error!"})
+        console.error('checkVerb error', e)
+        res.status(500).send({message: "Check word fail!"})
     }
 }
 
 
 export default {
-    checkWord
+    checkVerb
 }

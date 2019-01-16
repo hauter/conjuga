@@ -1,13 +1,26 @@
 import conjugaMe from './conjuga'
 import mongoClient from './mongo_client'
 
-const insertWord = async (conjugaObj) => {
+async function insertConjuga(conjugaObj) {
     const db = await mongoClient.getDb()
-    const wordsColl = db.collection("words")
+    const conjugaColl = db.collection("conjuga")
 
-    wordsColl.insertOne(conjugaObj)
+    conjugaObj._id = conjugaObj.verbo
+    conjugaColl.insertOne(conjugaObj)
 }
 
+async function checkConjuga(verbo) {
+    const db = await mongoClient.getDb()
+    const conjugaColl = db.collection("conjuga")
+
+    return await conjugaColl.findOne({
+        _id: verbo
+    })
+}
+
+
+
 export default {
-    insertWord
+    insertConjuga, 
+    checkConjuga
 }
