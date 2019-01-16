@@ -1,6 +1,7 @@
 import rp from 'request-promise'
 import cheerio from 'cheerio'
 import {cleanStr} from './autil'
+import urlencode from 'urlencode'
 
 const parseItems = (aNode) => {
     let status = 'normal'
@@ -150,7 +151,9 @@ const parseHtml = (html) => {
 }
 
 export default async (verbo) => {
-    const html = await rp(`http://www.conjuga-me.net/verbo-${verbo}`, {encoding: "latin1"})
+    const url = `http://www.conjuga-me.net/verbo-${urlencode(verbo)}`
+    console.log(url)
+    const html = await rp(url, {encoding: "latin1"})
     const conjugaRet = await parseHtml(html)
     conjugaRet.verbo = verbo
 
