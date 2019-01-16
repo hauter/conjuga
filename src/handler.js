@@ -17,6 +17,7 @@ async function checkWord(req, res) {
     
         const result = await conjuga(req.params.word)
         res.send(result)
+        
     } catch (e) {
         res.status(500).send({message: "Internal Server Error!"})
     }
