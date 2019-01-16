@@ -1,6 +1,8 @@
 Portuguese Learning toolset
 ====
 
+# About / 关于 / Sobre
+
 ## In English
 
 Google Translate provides high quality natural language translation and word pronunciation, but it is not a complete collection of tools for learning Portuguese because of the complex conjugation of Portuguese.
@@ -32,3 +34,11 @@ Eu também posso obter alguns bons recursos de aprendizagem de outros sites.
 Este projeto é minha própria ferramenta de aprendizado de português que combina os recursos do google, conjuga-me.net e muito mais.
 
 Vou hospedar este aplicativo em um servidor aliyun e, em seguida, fornecer uma página da Web H5 para acessar o serviço. Fique ligado!
+
+
+# Quick Start
+
+```
+npm install
+npm run start
+```
